@@ -146,8 +146,7 @@ nav ul li p a:hover {
     transform: translateY(-5px);
 }
 
-nav ul li p a:hover::before,
-nav ul li p a.active::before {
+nav ul li p a:hover::before {
     width: 28px;
     background-color: #ff3d7f;
 }
