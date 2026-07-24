@@ -1,0 +1,1046 @@
+@charset "utf-8";
+
+/* ===========================================
+   ◆ メインエリア
+===========================================*/
+
+.main-deco {
+    width: 100%;
+    background-color: #ffc814;
+}
+
+main {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #fffdd0;
+    padding-top: clamp(20px, 3vw, 50px);
+}
+
+
+
+
+/* ===========================================
+   ◆ MVスライド
+===========================================*/
+
+.slide {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 1252 / 832;
+    background-color: #fffdd0;
+}
+
+.slide img {
+    position: absolute;
+    inset: 0;
+    width: 98%;
+    height: 98%;
+    display: block;
+    object-fit: cover;
+    /* 枠いっぱいに表示 */
+    object-position: center;
+    opacity: 0;
+    animation: slideAnime 8s ease infinite;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: -3% -1.5%;
+    background: url("../images/frame03_1221x842.png") no-repeat center / cover;
+    background-size: contain;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.slide img:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.slide img:nth-of-type(2) {
+    animation-delay: 2s;
+}
+
+.slide img:nth-of-type(3) {
+    animation-delay: 4s;
+}
+
+.slide img:nth-of-type(4) {
+    animation-delay: 6s;
+}
+
+@keyframes slideAnime {
+    0% {
+        opacity: 0;
+    }
+
+    6% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    31% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ===========================================
+   ◆ 装飾エリア
+===========================================*/
+
+.god {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.god img {
+    width: 100%;
+    max-width: 522px;
+    height: auto;
+    display: block;
+}
+
+.hi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.hi img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    display: block;
+}
+
+.line {
+    position: relative;
+    height: 36px;
+    margin: 60px 0;
+    padding-bottom: 30px;
+    background-image: url(../images/hi.svg);
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.last-line {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-bottom: clamp(50px, 8vw, 100px);
+}
+
+
+.fuwafuwa {
+    -webkit-animation: fuwafuwa 3s infinite linear alternate;
+    animation: fuwafuwa 3s infinite linear alternate;
+}
+
+@-webkit-keyframes fuwafuwa {
+    0% {
+        -webkit-transform: translate(0, 0) rotate(-5deg);
+    }
+
+    50% {
+        -webkit-transform: translate(0, -5px) rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0) rotate(5deg);
+    }
+}
+
+@keyframes fuwafuwa {
+    0% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate(0, -5px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(5deg);
+    }
+}
+
+
+/* ===========================================
+   ◆ テキストコンテナ
+===========================================*/
+
+.container {
+    padding: clamp(60px, 5vw, 150px) 0;
+    background:
+        url(../images/bg_left_252x1250.png) no-repeat left center,
+        url(../images/bg_right252x1250.png) no-repeat right center;
+    background-size: auto clamp(60%, 100%, 100%);
+}
+
+.box-center {
+    width: 100%;
+    max-width: 669px;
+    aspect-ratio: 669 / 903;
+    margin: 0 auto;
+    padding: 110px 80px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-image: url("../images/frame05_669x903.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.frame-text {
+    width: 90%;
+    max-width: 460px;
+}
+
+.box-center p {
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: clamp(14px, 1.6vw, 18px);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+    white-space: pre-line;
+}
+
+
+
+.box-center h2 {
+    margin-top: clamp(16px, 4vw, 40px);
+    margin-inline: auto;
+    padding: clamp(8px, 1.8vw, 12px) clamp(16px, 4vw, 28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    color: #ff9760;
+    font-size: clamp(12px, 2vw, 24px);
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    transition: .3s ease;
+}
+
+.box-center h2:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+
+/* ===========================================
+   ◆ カテゴリ導線
+===========================================*/
+
+.category-section {
+    padding: 10px 20px 80px;
+}
+
+/* PC：モザイクレイアウト */
+.category-mosaic {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 10px;
+    height: auto;
+    max-width: 750px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.category-detail {
+    --overlay-color: #FAEEDA;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-color: #FAEEDA;
+    background-image: url("../images/grume_750x750.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* カラーオーバーレイ */
+.category-detail::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--overlay-color, #FAEEDA);
+    opacity: 0.3;
+    transition: background 0.4s;
+    pointer-events: none;
+}
+
+/* 枠画像 */
+.category-detail::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    background: url("../images/frame04_700x700.png") no-repeat center / 100% 100%;
+    z-index: 3;
+    pointer-events: none;
+    filter: var(--frame-filter, none);
+    transition: filter 0.4s;
+}
+
+.category-detail-content {
+    text-align: left;
+}
+
+.category-detail-content.massage {
+    text-align: right;
+}
+
+.category-detail-content.massage .category-detail-btn {
+    display: table;
+    margin-left: auto;
+}
+
+
+.category-detail-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 160px;
+    opacity: 0.1;
+    transition: opacity 0.4s, transform 0.5s;
+    pointer-events: none;
+}
+
+.category-detail-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+.category-detail-content {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.category-detail-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.category-detail-desc {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.category-detail-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.category-detail-btn:hover {
+    background: #fff;
+    color: #333;
+}
+
+/* 右：縦積みアイテム */
+.category-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category-item {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.25s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.category-item:hover {
+    transform: scale(1.04);
+}
+
+.category-item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.category-item-inner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.category-item.gourmet .category-item-inner {
+    background: #FAEEDA;
+}
+
+.category-item.massage .category-item-inner {
+    background: #E1F5EE;
+}
+
+.category-item.power .category-item-inner {
+    background: #EEEDFE;
+}
+
+.category-item.active .category-item-inner {
+    filter: brightness(0.9);
+}
+
+/* カテゴリごとのホバーオーバーレイ */
+.category-item-inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s;
+}
+
+.category-item.gourmet:hover .category-item-inner::after {
+    background: rgba(212, 120, 10, 0.5);
+}
+
+.category-item.massage:hover .category-item-inner::after {
+    background: rgba(10, 122, 90, 0.5);
+}
+
+.category-item.power:hover .category-item-inner::after {
+    background: rgba(74, 63, 176, 0.5);
+}
+
+.category-item-title {
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(60px);
+}
+
+.category-item.gourmet.active::before {
+    background: #EF9F27;
+}
+
+.category-item.massage.active::before {
+    background: #1D9E75;
+}
+
+.category-item.power.active::before {
+    background: #7F77DD;
+}
+
+
+/* スマホ・タブレット用（デフォルト非表示） */
+.category-list {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.category-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.25s;
+}
+
+.category-list-item:hover {
+    transform: translateY(-4px);
+}
+
+.category-list-circle {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-list-circle img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.category-list-item.gourmet .category-list-circle {
+    background: #FAEEDA;
+}
+
+.category-list-item.massage .category-list-circle {
+    background: #E1F5EE;
+}
+
+.category-list-item.power .category-list-circle {
+    background: #EEEDFE;
+}
+
+.category-list-circle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s;
+}
+
+.category-list-item.gourmet:hover .category-list-circle::after {
+    background: rgba(212, 120, 10, 0.5);
+}
+
+.category-list-item.massage:hover .category-list-circle::after {
+    background: rgba(10, 122, 90, 0.5);
+}
+
+.category-list-item.power:hover .category-list-circle::after {
+    background: rgba(74, 63, 176, 0.5);
+}
+
+.category-list-title {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.category-list-item.gourmet .category-list-title {
+    color: #BA7517;
+}
+
+.category-list-item.massage .category-list-title {
+    color: #0F6E56;
+}
+
+.category-list-item.power .category-list-title {
+    color: #534AB7;
+}
+
+.category-list-btn {
+    font-size: 11px;
+    padding: 5px 14px;
+    border-radius: 999px;
+}
+
+.category-list-item.gourmet .category-list-btn {
+    background: #FAEEDA;
+    color: #BA7517;
+}
+
+.category-list-item.massage .category-list-btn {
+    background: #E1F5EE;
+    color: #0F6E56;
+}
+
+.category-list-item.power .category-list-btn {
+    background: #EEEDFE;
+    color: #534AB7;
+}
+
+
+/* ===========================================
+   ◆ Instagramフィード風
+===========================================*/
+
+.insta-section {
+    padding: 10px 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.insta-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.insta-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.insta-icon {
+    width: 44px;
+    height: 44px;
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(214, 41, 118, 0.25);
+}
+
+.insta-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.insta-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.insta-follow {
+    font-size: 13px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: #ff9760;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.insta-follow:hover {
+    background: #e07840;
+}
+
+.insta-scroll {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.insta-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.insta-card {
+    flex-shrink: 0;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.25s;
+    border: 0.5px solid #eee;
+}
+
+.insta-card:hover {
+    transform: translateY(-4px);
+}
+
+.insta-img {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    overflow: hidden;
+}
+
+.insta-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.insta-card:hover .insta-img img {
+    transform: scale(1.05);
+}
+
+.insta-body {
+    padding: 8px 10px;
+    background: #fff;
+}
+
+.insta-tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.insta-tag.gourmet {
+    background: #FAEEDA;
+    color: #BA7517;
+}
+
+.insta-tag.massage {
+    background: #E1F5EE;
+    color: #0F6E56;
+}
+
+.insta-tag.power {
+    background: #EEEDFE;
+    color: #534AB7;
+}
+
+.insta-tag.night {
+    background: #E8F4FF;
+    color: #1A5F8A;
+}
+
+.insta-text {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ===========================================
+   ◆ お知らせバー
+===========================================*/
+
+.notice-bar {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    /* 縦並びに変更 */
+    gap: 10px;
+}
+
+.notice-heading {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    background: linear-gradient(90deg, #ff3d7f 0%, #ffc814 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 100% 100%;
+}
+
+.notice-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notice-label {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: linear-gradient(90deg, #ff9760, #ffc814);
+    color: #fff;
+}
+
+.notice-msgs {
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    width: 400px;
+}
+
+.notice-msg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.notice-msg.active {
+    opacity: 1;
+}
+
+.notice-msg:nth-child(1) {
+    color: #ff9760;
+}
+
+.notice-msg:nth-child(2) {
+    color: #1D9E75;
+}
+
+.notice-msg:nth-child(3) {
+    color: #7F77DD;
+}
+
+.notice-dots {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.notice-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.notice-dot:nth-child(1).active {
+    background: #ff9760;
+}
+
+.notice-dot:nth-child(2).active {
+    background: #1D9E75;
+}
+
+.notice-dot:nth-child(3).active {
+    background: #7F77DD;
+}
+
+
+
+
+/* ===========================================
+   ◆ タブレット用 (959px以下)
+===========================================*/
+
+@media screen and (max-width: 959px) {
+
+    main {
+        width: 100%;
+        padding: 0 20px;
+        width: 100%;
+        padding: 0 20px;
+        padding-top: clamp(20px, 3vw, 50px);
+    }
+
+
+    .box-center p br {
+        display: none;
+    }
+
+    .category-mosaic {
+        display: none;
+    }
+
+    .category-list {
+        display: grid;
+    }
+
+    .box-center p {
+        line-height: 2;
+        /* 追加：タブレットで少し縮める */
+    }
+
+    .container {
+        padding: 150px 0;
+        background-size: auto 80%;
+    }
+
+    .box-center {
+        position: relative;
+        isolation: isolate;
+        background-image: none;
+    }
+
+    .box-center::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("../images/frame05_669x903.png") no-repeat center / contain;
+        opacity: 0.6;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .box-center h2 {
+        margin-top: 1.5%;
+        font-size: clamp(16px, 3vw, 22px);
+    }
+
+    .to-top {
+        right: 75px;
+        bottom: 7.5px;
+    }
+
+    .insta-scroll {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===========================================
+   ◆ 700px以下
+===========================================*/
+
+@media screen and (max-width: 700px) {
+    .box-center {
+        padding: 15% 10%;
+        /* 余白を減らして文字エリアを広げる */
+    }
+
+    .box-center p {
+        font-size: clamp(11px, 2.5vw, 14px);
+        /* 文字を小さく */
+        line-height: 1.8;
+        margin-bottom: 12px;
+        padding: 2% 2%;
+    }
+
+    .box-center h2 {
+        font-size: clamp(12px, 3vw, 18px);
+        padding: 8px 16px;
+        white-space: normal;
+        /* 折り返しを許可 */
+    }
+}
+
+/* ===========================================
+   ◆ スマホ用 (480px以下)
+===========================================*/
+
+@media screen and (max-width: 480px) {
+
+    .container {
+        padding: 100px 0;
+        background-size: auto 60%;
+    }
+
+    .box-center {
+        padding: 3%;
+    }
+
+    .box-center::before {
+        opacity: 0.45;
+    }
+
+    .box-center p {
+        font-size: clamp(12px, 3vw, 16px);
+    }
+
+    .box-center h2 {
+        margin-top: 1%;
+        font-size: clamp(14px, 4vw, 20px);
+    }
+
+    .hi {
+        padding-top: 5px;
+    }
+
+    .hi img {
+        max-width: 90%;
+    }
+
+    .to-top {
+        right: 50px;
+        bottom: 5px;
+    }
+
+    /* Instagram */
+
+    .insta-section {
+        padding: 40px 5px;
+    }
+
+    .insta-scroll {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .insta-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .insta-img {
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
+
+    .insta-body {
+        padding: 6px 8px;
+    }
+
+    .insta-tag {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+
+    .insta-text {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    .notice-bar {
+        max-width: 100%;
+        padding: 10px 16px 14px;
+    }
+
+    .notice-msgs {
+        width: 240px;
+    }
+
+    .notice-msg {
+        font-size: 12px;
+    }
+
+    .box-center p {
+        font-size: clamp(12px, 3vw, 16px);
+        line-height: 1.8;
+        /* 追加：スマホでさらに縮める */
+    }
+}

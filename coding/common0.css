@@ -1,0 +1,454 @@
+@charset "utf-8";
+
+/* ===========================================
+   ◆ リセットの役割をする記述 
+===========================================*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+address {
+    font-style: normal;
+}
+
+
+/* ===========================================
+   ◆ 全体に対する基本指定
+===========================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: "Kozuka Gothic Pr6N", "小塚ゴシック Pr6N", sans-serif;
+    font-weight: 500;
+    color: #000;
+    line-height: 1;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ===========================================
+   ◆ ナビゲーション
+===========================================*/
+
+.navi {
+    background-color: #ff9760;
+    color: #fff;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.navi-inner {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navi-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navi-logo img {
+    display: block;
+    width: 120px;
+    height: auto;
+    padding-right: 15px;
+}
+
+nav {
+    flex: 1;
+    min-width: 0;
+}
+
+nav ul {
+    justify-content: flex-end;
+}
+
+nav ul li {
+    width: 33.33%;
+    font-size: clamp(10px, 1.5vw, 16px);
+    line-height: 1;
+}
+
+nav ul li p a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    color: #ff3d7f;
+    transition: 0.25s;
+    letter-spacing: 0.2em;
+    line-height: 1.4;
+    position: relative;
+}
+
+nav ul li p a::after {
+    content: attr(data-en);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+}
+
+nav ul li p a::before {
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.25s;
+}
+
+nav ul li p a:hover {
+    background-color: #fffdd0;
+    color: #ff3d7f;
+    transform: translateY(-5px);
+}
+
+nav ul li p a:hover::before,
+nav ul li p a.active::before {
+    width: 28px;
+    background-color: #ff3d7f;
+}
+
+
+
+
+/* ===========================================
+   ◆ フッター
+===========================================*/
+
+.footer {
+    width: 100%;
+    height: 350px;
+    background-color: #ffc814;
+    margin: 0 auto;
+}
+
+.inner-1 {
+    background-color: #fff;
+    line-height: 150px;
+    font-size: 16px;
+    border: 1px solid #000;
+    width: 100%;
+}
+
+.box-1 {
+    width: 200px;
+    text-align: center;
+}
+
+.box-1 p {
+    border-right: 1px solid #000;
+    line-height: 50px;
+}
+
+.inner-1 p a {
+    color: #000;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+footer .inner-1 a:hover {
+    color: #de4300;
+}
+
+.box-2 {
+    width: 500px;
+    color: #000;
+}
+
+.box-2 p a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.box-1,
+.box-2 {
+    width: 100%;
+}
+
+.thai-site {
+    width: 500px;
+    margin-left: 50px;
+}
+
+.oficciallogo {
+    line-height: 3%;
+    padding: 2.5%;
+}
+
+.inner-2 {
+    background-color: #ffc814;
+    height: 200px;
+    justify-content: space-around;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.add {
+    width: 400px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.add .border {
+    border-right: 2px solid #000;
+}
+
+.copyright {
+
+    width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 3em;
+    letter-spacing: 0.1em;
+}
+
+.sp-br {
+    display: none;
+}
+
+.blogo {
+    padding-bottom: 0.5em;
+}
+
+
+/* ===========================================
+   ◆ TOPボタン
+===========================================*/
+
+.to-top {
+    position: fixed;
+    right: 100px;
+    bottom: 10px;
+}
+
+.trans-late {
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.trans-late:hover {
+    animation: shake 0.3s linear infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* ===========================================
+   ◆ タブレット用 (959px以下)
+===========================================*/
+
+@media screen and (max-width: 959px) {
+
+    .footer,
+    .copyright {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .navi {
+        height: auto;
+    }
+
+    .navi-inner {
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        width: 33.33%;
+        font-size: clamp(10px, 1.5vw, 16px);
+        line-height: 1;
+    }
+
+    nav ul li p a {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .footer {
+        height: auto;
+        padding-right: 25px;
+    }
+
+    .inner-1 {
+        flex-direction: column;
+        height: auto;
+        line-height: normal;
+        font-size: 14px;
+        padding: 20px 0;
+    }
+
+    .box-1,
+    .box-2,
+    .add {
+        width: 100%;
+        border: none;
+    }
+
+    .box-1 p {
+        border-right: none;
+        border-bottom: 1px solid #000;
+        margin-bottom: 10px;
+    }
+
+    .thai-site {
+        width: 500px;
+        margin-left: 50px;
+    }
+
+    .inner-2 {
+        height: 150px;
+    }
+
+    .add {
+        width: 400px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    .add .border {
+        border-right: none;
+    }
+
+    .sp-br {
+        display: inline;
+    }
+
+    .to-top {
+        right: 75px;
+        bottom: 7.5px;
+    }
+
+    .copyright {
+        width: 100%;
+    }
+}
+
+
+/* ===========================================
+   ◆ スマホ用 (480px以下)
+===========================================*/
+
+@media screen and (max-width: 480px) {
+
+    body {
+        font-size: 13px;
+    }
+
+    nav ul li {
+        width: 33.33%;
+        font-size: 10px;
+    }
+
+    .inner-1 {
+        font-size: 10px;
+    }
+
+    .inner-2 {
+        height: 100px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .add {
+        width: 66.66%;
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .add .border {
+        border-right: none;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .logo-zone {
+        width: 33.33%;
+    }
+
+    .last-line {
+        padding-bottom: 50px;
+    }
+
+    .footer {
+        padding-right: 25px;
+    }
+
+    .to-top {
+        right: 50px;
+        bottom: 5px;
+    }
+
+    .copyright {
+        width: 100%;
+    }
+}
